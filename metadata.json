@@ -1,0 +1,5 @@
+{
+  "name": "Math Exam Generator",
+  "description": "A web application that uses Gemini to generate math exam questions based on a user-provided topic and number of questions.",
+  "requestFramePermissions": []
+}
