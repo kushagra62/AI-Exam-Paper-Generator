@@ -27,7 +27,7 @@ const examSchema = {
 };
 
 export const generateExam = async (topic: string, numQuestions: number): Promise<Exam> => {
-  const prompt = `Generate an exam with ${numQuestions} math questions about "${topic}". The questions should be appropriate for a high school level. Provide a clear question and a concise answer for each.`;
+  const prompt = `Generate an exam with ${numQuestions} math questions about "${topic}". The questions should be appropriate for a primary school level. Provide a clear question and a concise answer for each.`;
 
   try {
     const response = await ai.models.generateContent({
@@ -46,7 +46,6 @@ export const generateExam = async (topic: string, numQuestions: number): Promise
       throw new Error("AI returned an invalid or empty exam format.");
     }
     
-    // Sometimes the AI might ignore the count, so we slice it to be sure.
     return generatedExam.slice(0, numQuestions);
 
   } catch (error) {
